@@ -8,7 +8,7 @@ class Stack {			// Stack class for representing a stack
 
 private:
 	Node *topNode;		// Top node element of the stack
-	int count;			// Size of the stack
+	int count;		// Size of the stack
 	
 public:
 	// Constructor
@@ -28,7 +28,7 @@ public:
 	// Function to return if the stack is empty of not
 	bool is_empty();
 	// Function to swap the two stacks
-	void swap(Stack &s1);
+	void swap(Stack &s);
 	
 	// Function to print the stack elements
 	void print();
@@ -90,10 +90,14 @@ bool Stack::is_empty() {
 }
 
 // Function to swap the two stacks
-void Stack::swap(Stack &s1) {
-	Node *temp = s1.topNode;
-	s1.topNode = this->topNode;
-	this->topNode = temp;
+void Stack::swap(Stack &s) {
+	Node *temp1 = topNode;
+	topNode = s.topNode;
+	s.topNode = temp1;
+	
+	int temp2 = count;
+	count = s.count;
+	s.count = temp2;
 }
 
 // Function to print the stack elements
