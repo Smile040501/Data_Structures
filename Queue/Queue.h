@@ -68,6 +68,12 @@ void Queue::push(int data) {
 void Queue::pop() {
 	if(!head) {
 		return;
+	} else if(head==tail) {
+		Node *nodeToDelete = head;
+		head = tail = nullptr;
+		count = 0;
+		delete nodeToDelete;
+		return;
 	}
 	Node *nodeToDelete = head;
 	head = head->next;
