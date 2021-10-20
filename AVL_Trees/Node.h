@@ -1,9 +1,8 @@
 #ifndef _NODE_
 #define _NODE_
 
-class Node
-{ // Node class for representing node of the tree
-public:
+class Node {  // Node class for representing node of the tree
+   public:
     Node *left;
     int data;
     Node *right;
@@ -19,25 +18,21 @@ public:
 
 // Constructors
 Node::Node(Node *left, int data, Node *right)
-    : left{left}, data{data}, right{right}
-{
+    : left{left}, data{data}, right{right} {
 }
 
 Node::Node()
-    : Node{nullptr, 0, nullptr}
-{
+    : Node{nullptr, 0, nullptr} {
 }
 
 Node::Node(int data)
-    : Node{nullptr, data, nullptr}
-{
+    : Node{nullptr, data, nullptr} {
 }
 
 // Destructor
-Node::~Node()
-{
+Node::~Node() {
     delete left;
     delete right;
 }
 
-#endif // _NODE_
+#endif  // _NODE_

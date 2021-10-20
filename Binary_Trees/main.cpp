@@ -1,5 +1,6 @@
-# include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
+
 #include "BinaryTree.h"
 
 // Sample Main
@@ -12,51 +13,51 @@
 int main() {
     BinaryTree tree;
     tree.createTree();
-    
+
     tree.levelOrder();
-    
+
     std::cout << "Total number of nodes : " << tree.countTotalNodes() << std::endl;
     std::cout << "Degree 0 nodes : " << tree.countDegreeZeroNodes() << std::endl;
     std::cout << "Degree 1 nodes : " << tree.countDegreeOneNodes() << std::endl;
-   std::cout << "Degree 2 nodes : " << tree.countDegreeTwoNodes() << std::endl; 
+    std::cout << "Degree 2 nodes : " << tree.countDegreeTwoNodes() << std::endl;
     std::cout << "Height : " << tree.height() << std::endl;
-	
-	tree.preOrder();
+
+    tree.preOrder();
     tree.inOrder();
     tree.postOrder();
-    
+
     std::cout << std::endl;
-    
-    int numOfNodesPreIn=0;
+
+    int numOfNodesPreIn = 0;
     std::cout << "Enter the number of nodes of the tree : ";
     std::cin >> numOfNodesPreIn;
     std::cout << "Enter the Pre-Order traversal of elements separated by spaces : ";
     std::vector<int> preOrder;
-    for(int i{}; i<numOfNodesPreIn; i++) {
-        int node=0;
+    for (int i{}; i < numOfNodesPreIn; i++) {
+        int node = 0;
         std::cin >> node;
         preOrder.push_back(node);
     }
     std::cout << "Enter the In-Order traversal of elements separated by spaces : ";
     std::vector<int> inOrder{};
-    for(int i{}; i<numOfNodesPreIn; i++) {
+    for (int i{}; i < numOfNodesPreIn; i++) {
         int node{};
         std::cin >> node;
         inOrder.push_back(node);
     }
-    
+
     BinaryTree preInTree;
     preInTree.createTreeFromPreInOrder(preOrder, inOrder);
     preInTree.levelOrder();
-    
+
     std::cout << std::endl;
-    
+
     int numOfNodesPostIn{};
     std::cout << "Enter the number of nodes of the tree : ";
     std::cin >> numOfNodesPostIn;
     std::cout << "Enter the Post-Order traversal of elements separated by spaces : ";
     std::vector<int> postOrder{};
-    for(int i{}; i<numOfNodesPostIn; i++) {
+    for (int i{}; i < numOfNodesPostIn; i++) {
         int node{};
         std::cin >> node;
         postOrder.push_back(node);
@@ -68,13 +69,13 @@ int main() {
     //    std::cin >> node;
     //    inOrder.push_back(node);
     //}
-    
+
     BinaryTree postInTree{};
     postInTree.createTreeFromPostInOrder(postOrder, inOrder);
     postInTree.levelOrder();
-    
+
     std::cout << std::endl;
-    
+
     std::cout << std::endl;
     return 0;
 }

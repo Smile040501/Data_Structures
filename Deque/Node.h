@@ -1,11 +1,12 @@
 #ifndef _NODE_
 #define _NODE_
 
-class Node {  // Node class for representing a node of linked list representing stack
+class Node {  // Node class for representing a node of the linked list representing Deque
    public:
     // Attributes
+    Node *prev;
     int data;
-    Node *bottom;
+    Node *next;
 
     // Constructors
     Node();
@@ -17,16 +18,17 @@ class Node {  // Node class for representing a node of linked list representing 
 
 // Constructors
 Node::Node()
-    : data{}, bottom{nullptr} {
+    : prev{nullptr}, data{}, next{nullptr} {
 }
 
 Node::Node(int data)
-    : data{data}, bottom{nullptr} {
+    : prev{nullptr}, data{data}, next{nullptr} {
 }
 
 // Destructor
 Node::~Node() {
-    delete bottom;
+    delete next;
+    delete prev;
 }
 
 #endif  // _NODE_
